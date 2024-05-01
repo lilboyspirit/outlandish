@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.0745098, 0.113725, 0.176471, 1)
 config/icon="res://icon.svg"
 
+[autoload]
+
+Settings="*res://autoload/Settings.gd"
+
 [display]
 
 window/size/viewport_width=800
