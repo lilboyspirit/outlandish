@@ -9,9 +9,9 @@ func _ready():
 	if in_game:
 		# TODO: adjust game settings based on game data
 		$TabContainer.add_child(game_tab.instantiate())
-	
-	# TODO: load saved settigns
-	# TODO: adjust settings based on saved settings
+
+	_on_settings_updated()
+	Settings.connect("settings_updated", _on_settings_updated)
 
 
 func _input(event: InputEvent):
@@ -23,3 +23,11 @@ func _input(event: InputEvent):
 func _on_back():
 	# TODO: save settings
 	queue_free()
+
+
+func _on_settings_updated():
+	%power_saving.button_pressed = Settings.power_saving
+
+
+func _on_power_saving_toggled(toggled_on: bool):
+	Settings.power_saving = toggled_on
