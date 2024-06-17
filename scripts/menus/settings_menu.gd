@@ -21,7 +21,7 @@ func _input(event: InputEvent):
 
 
 func _on_back():
-	# TODO: save settings
+	await Settings.save_config()
 	queue_free()
 
 
